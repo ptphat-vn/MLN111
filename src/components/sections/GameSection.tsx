@@ -45,7 +45,7 @@ const scenes: GameScene[] = [
     character: characters.minh,
     dialogue: [
       "Minh: Mình vừa tốt nghiệp xong, cần kiếm tiền.",
-      "Bạn: Chạy app đi, tự do lắm. Muốn làm lúc nào cũng được.",
+      "Bạn của Minh: Chạy app đi, tự do lắm. Muốn làm lúc nào cũng được.",
       "Minh: Thật sao? Nghe có vẻ ổn...",
       "[Minh tải ứng dụng]",
       "🤖 AI System: Chúc mừng! Bạn đã trở thành đối tác tự do của X App.",
@@ -61,19 +61,16 @@ const scenes: GameScene[] = [
     title: "CẢNH 2 — NHỮNG NGÀY ĐẦU 'TỰ DO'",
     character: characters.minh,
     dialogue: [
-      "💰 Lương hiện tại: 2.000.000đ",
-      "⭐ Đánh giá: 5.0 sao",
-      "📊 KPI: Bình thường",
       "[Minh bật app]",
       "🤖 AI System: Có 5 cuốc chờ bạn!",
       "Minh: Dễ quá! Cuốc nào cũng nhận được.",
-      "[Sau 3 giờ]",
+      "[Sau 3 giờ làm việc]",
       "✅ Kiếm được: 450.000đ",
-      "⭐ Đánh giá: 5.0 sao (5 chuyến 5 sao)",
+      "⭐ Khách đánh giá: 5.0 sao (5 chuyến 5 sao)",
       "Minh: Mình thật sự đang làm chủ!"
     ],
     choices: [
-      { text: "Tiếp tục chạy", nextScene: 2 }
+      { text: "Tiếp tục chạy", nextScene: 2, impact: { money: 450000 } }
     ]
   },
   {
@@ -81,10 +78,7 @@ const scenes: GameScene[] = [
     title: "CẢNH 3 — THUẬT TOÁN BẮT ĐẦU KIỂM SOÁT",
     character: characters.ai,
     dialogue: [
-      "💰 Lương hiện tại: 2.450.000đ",
-      "⭐ Đánh giá: 5.0 sao",
-      "📊 KPI: Bình thường",
-      "[Sau 5 giờ, Minh cảm thấy mệt]",
+      "[Sau 5 giờ làm việc, Minh cảm thấy mệt]",
       "Minh: Mình muốn nghỉ sớm...",
       "🤖 AI System: ⚠️ THÔNG BÁO",
       "🤖 AI System: Hoàn thành thêm 3 cuốc để nhận thưởng giờ cao điểm: +500.000đ",
@@ -108,16 +102,13 @@ const scenes: GameScene[] = [
     title: "CẢNH 4 — KHÔNG ĐƯỢC QUYỀN LỰA CHỌN",
     character: characters.ai,
     dialogue: [
-      "💰 Lương hiện tại: 2.950.000đ",
-      "⭐ Đánh giá: 5.0 sao",
-      "📊 KPI: Tăng",
       "[Minh nhận một cuốc]",
       "Minh: Được rồi, nhận này.",
       "[Sau khi nhận]",
-      "🤖 AI System: Đơn hàng: A → B",
-      "Minh: Cái gì? Quá xa vậy? Kẹt xe mất 1 tiếng!",
+      "🤖 AI System: Đơn hàng: Quận 9 → Quận Tân Bình",
+      "Minh: Cái gì? Xa quá vậy? Kẹt xe mất 1 tiếng!",
       "Minh: Mình không biết khách đi đâu trước khi nhận?",
-      "[Muốn hủy]",
+      "[Muốn hủy cuốc]",
       "🤖 AI System: ⚠️ Tỷ lệ hủy chuyến của bạn đang vượt mức cho phép.",
       "🤖 AI System: Tiếp tục hủy sẽ bị hạn chế quyền chọn cuốc."
     ],
@@ -139,9 +130,6 @@ const scenes: GameScene[] = [
     title: "CẢNH 5 — ÁP LỰC ĐÁNH GIÁ SAO",
     character: characters.ai,
     dialogue: [
-      "💰 Lương hiện tại: 3.100.000đ",
-      "⭐ Đánh giá: 4.8 sao",
-      "📊 KPI: Tăng",
       "[Một khách khó tính đánh giá 1 sao dù Minh không làm sai]",
       "Minh: Gì vậy? Mình đã chở tốt mà!",
       "🤖 AI System: ⚠️ Điểm đánh giá của bạn đang giảm.",
@@ -149,7 +137,7 @@ const scenes: GameScene[] = [
       "Minh: Nhưng mình không làm sai gì cả... Minh chỉ là tài xế!"
     ],
     choices: [
-      { text: "Tiếp tục", nextScene: 5 }
+      { text: "Tiếp tục", nextScene: 5, impact: { rating: 0 } }
     ]
   },
   {
@@ -157,13 +145,10 @@ const scenes: GameScene[] = [
     title: "CẢNH 6 — CHI PHÍ TĂNG CAO",
     character: characters.huy,
     dialogue: [
-      "💰 Lương hiện tại: 3.100.000đ",
-      "⭐ Đánh giá: 4.8 sao",
-      "📊 KPI: Tăng cao",
       "[Minh gặp Huy - tài xế lâu năm]",
       "Minh: Anh Huy, sao lúc anh kiếm được nhiều hơn mình?",
       "Huy: Cái đó là cũ rồi. Xe hỏng giờ, xăng tăng, giá cước thì không đổi.",
-      "Minh: Nhưng giá do app quyết định chuà? Mình chi tiền mua xe, xăng, sửa xe...",
+      "Minh: Nhưng giá do app quyết định chú à? Mình chi tiền mua xe, xăng, sửa xe...",
       "Huy: Ừ. Mình sở hữu cái xe, nhưng đâu sở hữu công việc.",
       "Huy: Đó chính là sự khác biệt.",
       "Minh: Vậy mình đang làm gì? Đối tác hay nhân viên?"
@@ -177,9 +162,6 @@ const scenes: GameScene[] = [
     title: "CẢNH 7 — TĂNG CHIẾT KHẤU",
     character: characters.company,
     dialogue: [
-      "💰 Lương hiện tại: 3.100.000đ",
-      "⭐ Đánh giá: 4.8 sao",
-      "📊 KPI: Tăng cao",
       "📧 THÔNG BÁO TỪ NỀN TẢNG",
       "💼 Đại diện công ty: Nhằm nâng cao trải nghiệm khách hàng,",
       "💼 Đại diện công ty: mức chiết khấu sẽ tăng từ 25% lên 30%.",
@@ -201,9 +183,6 @@ const scenes: GameScene[] = [
     title: "CẢNH 8 — NHÓM CHAT TÀI XẾ",
     character: characters.huy,
     dialogue: [
-      "💰 Lương hiện tại: 2.800.000đ",
-      "⭐ Đánh giá: 4.8 sao",
-      "📊 KPI: Rất cao",
       "📱 NHÓM CHAT TÀI XẾ",
       "Người 1: Không chạy thì lấy gì ăn?",
       "Người 2: Càng im lặng thì họ càng ép.",
@@ -232,9 +211,6 @@ const scenes: GameScene[] = [
     endingType: "bad",
     character: characters.ai,
     dialogue: [
-      "💰 Lương cuối: 3.200.000đ",
-      "⭐ Đánh giá cuối: 4.8 sao",
-      "📊 KPI cuối: RẤT CAO",
       "❌ KẾT CỤC",
       "🤖 AI System: Vì tỷ lệ hủy cao, tài khoản của bạn bị hạn chế.",
       "🤖 AI System: Bạn chỉ nhận được 20% cuốc gốc.",
@@ -254,9 +230,6 @@ const scenes: GameScene[] = [
     title: "CẢNH 9 — TẮT APP TẬP THỂ",
     character: characters.ai,
     dialogue: [
-      "💰 Lương: 2.800.000đ",
-      "⭐ Đánh giá: 4.8 sao",
-      "📊 KPI: Rất cao",
       "[Đột ngột, cùng lúc hàng nghìn tài xế tắt app]",
       "📱 TIN TỨC NÓNG",
       "\"Hàng nghìn tài xế đồng loạt offline\"",
@@ -281,10 +254,7 @@ const scenes: GameScene[] = [
     endingType: "good",
     character: characters.company,
     dialogue: [
-      "💰 Lương: 2.800.000đ",
-      "⭐ Đánh giá: 4.8 sao",
-      "📊 KPI: Giảm",
-      "📧 THÔNG BÁO - SAU 2 NGÀY",
+      " THÔNG BÁO - SAU 2 NGÀY",
       "💼 Công ty: Chúng tôi sẵn sàng đối thoại với đại diện tài xế",
       "💼 Công ty: về chính sách chiết khấu.",
       "",

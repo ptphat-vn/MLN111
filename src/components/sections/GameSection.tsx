@@ -1,9 +1,8 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent } from "../ui/card"
-import { Badge } from "../ui/badge"
 import { Button } from "../ui/button"
-import { Gamepad2, RotateCcw, ChevronRight } from "lucide-react"
+import { RotateCcw, ChevronRight } from "lucide-react"
 
 interface GameChoice {
   text: string
@@ -21,6 +20,13 @@ interface Character {
   role: string
 }
 
+interface PhoneMessage {
+  sender: string
+  avatar: string
+  message: string
+  isTyping?: boolean
+}
+
 interface GameScene {
   id: number
   title: string
@@ -29,6 +35,7 @@ interface GameScene {
   choices?: GameChoice[]
   isEnding?: boolean
   endingType?: "bad" | "good"
+  phoneMessages?: PhoneMessage[]
 }
 
 const characters = {
@@ -116,7 +123,7 @@ const scenes: GameScene[] = [
       { 
         text: "Chấp nhận cuốc (khổ)", 
         nextScene: 4,
-        impact: { money: 150000, rating: -0.1 }
+        impact: { money: 150000, rating: -0.2 }
       },
       { 
         text: "Hủy cuốc (bị phạt)", 
@@ -131,7 +138,7 @@ const scenes: GameScene[] = [
     character: characters.ai,
     dialogue: [
       "[Một khách khó tính đánh giá 1 sao dù Minh không làm sai]",
-      "Minh: Gì vậy? Mình đã chở tốt mà!",
+      "Minh: Gì vậy? Mình đã hoàn thành rất tốt mà!",
       "🤖 AI System: ⚠️ Điểm đánh giá của bạn đang giảm.",
       "🤖 AI System: Tài khoản có nguy cơ bị hạn chế nếu tiếp tục.",
       "Minh: Nhưng mình không làm sai gì cả... Minh chỉ là tài xế!"
@@ -146,9 +153,9 @@ const scenes: GameScene[] = [
     character: characters.huy,
     dialogue: [
       "[Minh gặp Huy - tài xế lâu năm]",
-      "Minh: Anh Huy, sao lúc anh kiếm được nhiều hơn mình?",
-      "Huy: Cái đó là cũ rồi. Xe hỏng giờ, xăng tăng, giá cước thì không đổi.",
-      "Minh: Nhưng giá do app quyết định chú à? Mình chi tiền mua xe, xăng, sửa xe...",
+      "Minh: Anh Huy, sao lúc trước anh kiếm được nhiều hơn em bây giờ vậy?",
+      "Huy: Cái đó là cũ rồi. Giờ xe hỏng, xăng tăng, giá cước thì không đổi.",
+      "Minh: Nhưng giá cước thì do app quyết định à? Còn tất cả là mình chi tiền mua xe, đổ xăng, sửa xe...",
       "Huy: Ừ. Mình sở hữu cái xe, nhưng đâu sở hữu công việc.",
       "Huy: Đó chính là sự khác biệt.",
       "Minh: Vậy mình đang làm gì? Đối tác hay nhân viên?"
@@ -202,6 +209,16 @@ const scenes: GameScene[] = [
         nextScene: 8,
         impact: { money: 400000 }
       }
+    ],
+    phoneMessages: [
+      { sender: "Huy", avatar: "👨‍💻", message: "Anh em ơi, chiết khấu tăng lên 30% rồi!" },
+      { sender: "Nguyễn Hải", avatar: "👨‍💼", message: "Chạy được gì? Tiền xăng còn tăng 50%" },
+      { sender: "Trần Minh", avatar: "👨‍💻", message: "Hôm qua tôi chạy 8h chỉ kiếm 300k, còn xăng hết 200k" },
+      { sender: "Phạm Thắng", avatar: "👨‍💼", message: "Công ty nói là 'đối tác', nhưng quyết định một chiều" },
+      { sender: "Huy", avatar: "👨‍💻", message: "Một mình khó kháng cự. Nhưng nếu cùng nhau..." },
+      { sender: "Lê Sơn", avatar: "👨‍💻", message: "Hẹn thứ ba - ai cũng tắt app, 2 tiếng" },
+      { sender: "Trần Minh", avatar: "👨‍💻", message: "Tôi support! Sức mạnh tập thể!" },
+      { sender: "Nguyễn Hải", avatar: "👨‍💼", message: "Gợi ý mà, không bắt buộc. Mỗi người lựa chọn" }
     ]
   },
   {
@@ -278,7 +295,7 @@ export function GameSection() {
   const [currentScene, setCurrentScene] = useState(0)
   const [gameState, setGameState] = useState({
     money: 2000000,
-    rating: 5.0,
+    rating: 5,
     kpi: 0
   })
   const [displayedDialogue, setDisplayedDialogue] = useState(0)
@@ -289,9 +306,9 @@ export function GameSection() {
   const handleChoice = (choice: GameChoice) => {
     if (choice.impact) {
       setGameState(prev => ({
-        money: Math.max(0, prev.money + (choice.impact.money || 0)),
-        rating: Math.max(0, Math.min(5, prev.rating + (choice.impact.rating || 0))),
-        kpi: Math.max(0, prev.kpi + (choice.impact.kpi || 0))
+        money: Math.max(0, prev.money + (choice.impact?.money || 0)),
+        rating: Math.max(0, Math.min(5, prev.rating + (choice.impact?.rating || 0))),
+        kpi: Math.max(0, prev.kpi + (choice.impact?.kpi || 0))
       }))
     }
     setDisplayedDialogue(0)
@@ -310,7 +327,7 @@ export function GameSection() {
 
   const resetGame = () => {
     setCurrentScene(0)
-    setGameState({ money: 2000000, rating: 5.0, kpi: 0 })
+      setGameState({ money: 2000000, rating: 5, kpi: 0 })
     setDisplayedDialogue(0)
     setGameComplete(false)
   }
@@ -318,6 +335,53 @@ export function GameSection() {
   const formatCurrency = (value: number) => {
     return value.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }).replace('₫', 'đ')
   }
+
+  const PhoneScreen = ({ messages }: { messages: PhoneMessage[] }) => (
+    <div className="bg-black rounded-3xl border-8 border-gray-900 shadow-2xl overflow-hidden max-h-[600px] flex flex-col">
+      {/* Phone Header */}
+      <div className="bg-gray-900 text-white px-4 py-2 flex items-center justify-between text-xs">
+        <span>9:41</span>
+        <span className="font-semibold">NHÓM CHAT TÀI XẾ</span>
+        <span>📶</span>
+      </div>
+
+      {/* Chat Messages */}
+      <div className="flex-1 overflow-y-auto bg-gray-100 p-4 space-y-3">
+        {messages.map((msg, idx) => (
+          <motion.div
+            key={`msg-${idx}-${msg.sender}`}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.1 }}
+            className="flex gap-2"
+          >
+            <span className="text-2xl flex-shrink-0">{msg.avatar}</span>
+            <div className="flex-1">
+              <div className="text-xs font-bold text-gray-700 mb-1">{msg.sender}</div>
+              <div className={`inline-block max-w-[80%] px-3 py-2 rounded-lg text-sm ${
+                msg.sender === "Huy" 
+                  ? 'bg-blue-500 text-white' 
+                  : 'bg-white text-gray-800 border border-gray-300'
+              }`}>
+                {msg.message}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Phone Input Area */}
+      <div className="bg-gray-200 px-4 py-3 border-t border-gray-300 flex gap-2">
+        <input 
+          type="text" 
+          placeholder="Nhập tin nhắn..."
+          className="flex-1 bg-white rounded-full px-4 py-2 text-sm border-none focus:outline-none"
+          disabled
+        />
+        <button className="text-blue-500 font-bold text-sm">📤</button>
+      </div>
+    </div>
+  )
 
   return (
     <section id="section-7" className="min-h-screen py-24 px-4 bg-bg-base relative flex items-center justify-center">
@@ -355,7 +419,7 @@ export function GameSection() {
                       {/* Scene Title */}
                       <div className="mb-6">
                         <h3 className="text-2xl font-bold text-accent-red mb-4">{scene.title}</h3>
-                        {scene.character && (
+                        {scene.character && !scene.phoneMessages && (
                           <div className="flex items-center gap-3 mb-6 p-3 bg-gray-50 rounded-lg">
                             <span className="text-4xl">{scene.character.avatar}</span>
                             <div>
@@ -366,11 +430,18 @@ export function GameSection() {
                         )}
                       </div>
 
+                      {/* Phone Screen - if available */}
+                      {scene.phoneMessages && (
+                        <div className="mb-6 flex justify-center">
+                          <PhoneScreen messages={scene.phoneMessages} />
+                        </div>
+                      )}
+
                       {/* Dialogue Display */}
                       <div className="space-y-3 mb-8 min-h-[300px]">
                         {scene.dialogue.slice(0, displayedDialogue + 1).map((line, idx) => (
                           <motion.div
-                            key={idx}
+                            key={`dialogue-${scene.id}-${idx}`}
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             className={`p-3 rounded-lg ${
@@ -408,7 +479,7 @@ export function GameSection() {
                         <div className="space-y-3">
                           {scene.choices.map((choice, idx) => (
                             <motion.button
-                              key={idx}
+                              key={`choice-${scene.id}-${idx}`}
                               whileHover={{ scale: 1.02 }}
                               whileTap={{ scale: 0.98 }}
                               onClick={() => handleChoice(choice)}
@@ -467,8 +538,8 @@ export function GameSection() {
                       <div className="text-sm text-gray-600 mb-1">Tiến độ</div>
                       <div className="text-2xl font-bold text-purple-700">{currentScene + 1}/{scenes.length}</div>
                       <div className="mt-2 space-y-1">
-                        {Array(scenes.length).fill(null).map((_, i) => (
-                          <div key={i} className="text-xs">
+                        {new Array(scenes.length).fill(null).map((_, i) => (
+                          <div key={`progress-${i}`} className="text-xs">
                             {i < currentScene ? '✅' : i === currentScene ? '▶️' : '⬜'} {scenes[i].title.split('—')[0].trim()}
                           </div>
                         ))}

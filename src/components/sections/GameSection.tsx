@@ -189,7 +189,9 @@ const scenes: GameScene[] = [
     id: 7,
     title: "CẢNH 8 — NHÓM CHAT TÀI XẾ",
     character: characters.huy,
-    dialogue: [],
+    dialogue: [
+        "Minh: Mình có nên ủng hộ họ không... cân nhắc có hay không?"
+    ],
     choices: [
       { 
         text: "Tắt app cùng mọi người (tham gia đấu tranh)", 
@@ -210,8 +212,7 @@ const scenes: GameScene[] = [
       { sender: "Huy", avatar: "👨‍💻", message: "Một mình khó kháng cự. Nhưng nếu cùng nhau..." },
       { sender: "Lê Sơn", avatar: "👨‍💻", message: "Hẹn thứ ba - ai cũng tắt app, 2 tiếng" },
       { sender: "Trần Minh", avatar: "👨‍💻", message: "Tôi support! Sức mạnh tập thể!" },
-      { sender: "Nguyễn Hải", avatar: "👨‍💼", message: "Gợi ý mà, không bắt buộc. Mỗi người lựa chọn" },
-      { sender: "Minh", avatar: "👨‍💼", message: "Mình có nên... có nên cân nhắc không..." }
+      { sender: "Nguyễn Hải", avatar: "👨‍💼", message: "Gợi ý mà, không bắt buộc. Mỗi người lựa chọn" }
     ]
   },
   {
@@ -310,6 +311,15 @@ export function GameSection() {
   }
 
   const handleContinueDialogue = () => {
+    const scene = scenes[currentScene]
+    
+    // If there's a phone screen, show messages progressively
+    if (scene.phoneMessages && displayedPhoneMessages < scene.phoneMessages.length) {
+      setDisplayedPhoneMessages(displayedPhoneMessages + 1)
+      return
+    }
+    
+    // Otherwise, show dialogue progressively
     if (displayedDialogue < scene.dialogue.length - 1) {
       setDisplayedDialogue(displayedDialogue + 1)
     } else if (scene.choices && scene.choices.length > 0) {
@@ -332,7 +342,7 @@ export function GameSection() {
   }
 
   const PhoneScreen = ({ messages, displayCount = messages.length }: { messages: PhoneMessage[], displayCount?: number }) => (
-    <div className="bg-black rounded-3xl border-8 border-gray-900 shadow-2xl overflow-hidden max-h-[900px] flex flex-col">
+    <div className="bg-black rounded-3xl border-8 border-gray-900 shadow-2xl overflow-hidden max-h-[800px] flex flex-col">
       {/* Phone Header */}
       <div className="bg-gray-900 text-white px-4 py-2 flex items-center justify-between text-xs">
         <span>9:41</span>

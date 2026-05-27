@@ -48,7 +48,7 @@ export function HistoricalComparisonSection() {
 
   return (
     <section id="section-10" className="min-h-screen py-24 bg-bg-base relative overflow-hidden">
-      <div className="absolute top-0 right-0 text-[20rem] font-serif font-bold text-text-muted opacity-5 select-none leading-none -mt-16 -mr-16">
+      <div className="absolute top-0 right-0 text-[10rem] sm:text-[20rem] font-serif font-bold text-text-muted opacity-5 select-none leading-none -mt-16 -mr-16 pointer-events-none">
         11
       </div>
 
@@ -122,6 +122,9 @@ export function HistoricalComparisonSection() {
         </div>
 
         {/* Comparison Table */}
+        <div className="text-right text-xs text-text-muted italic mb-2 block md:hidden">
+          Vuốt ngang để xem đầy đủ bảng ➡️
+        </div>
         <div className="mb-16 overflow-x-auto bg-white rounded-xl shadow-sm border border-border">
           <Table className="min-w-[600px] w-full">
             <TableHeader>

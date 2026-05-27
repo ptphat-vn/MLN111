@@ -7,8 +7,8 @@ import { Swords } from "lucide-react"
 
 export function StruggleTheorySection() {
   return (
-    <section id="section-4" className="min-h-screen py-24 px-4 bg-bg-muted relative">
-      <div className="absolute top-0 right-0 text-[20rem] font-serif font-bold text-black opacity-[0.03] select-none leading-none -mt-16 -mr-16">
+    <section id="section-4" className="min-h-screen py-24 px-4 bg-bg-muted relative overflow-hidden">
+      <div className="absolute top-0 right-0 text-[10rem] sm:text-[20rem] font-serif font-bold text-black opacity-[0.03] select-none leading-none -mt-16 -mr-16 pointer-events-none">
         04
       </div>
 
@@ -29,6 +29,9 @@ export function StruggleTheorySection() {
 
         {/* Conflict Diagram */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-16 relative">
+          {/* Vertical line behind items on mobile */}
+          <div className="md:hidden absolute top-10 bottom-10 left-1/2 w-[2px] bg-gradient-to-b from-red-200 via-accent-red to-blue-200 z-0 -translate-x-1/2"></div>
+
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -57,7 +60,7 @@ export function StruggleTheorySection() {
             <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4 bg-white hidden md:block">
               <img src="/platform_vs_worker.png" alt="Mâu thuẫn" className="w-full h-full object-cover" />
             </div>
-            <div className="bg-bg-muted p-4 rounded-full shadow-sm">
+            <div className="bg-bg-muted p-4 rounded-full shadow-sm relative z-10 border border-border">
               <Swords className="w-8 h-8 text-accent-red" />
             </div>
           </motion.div>

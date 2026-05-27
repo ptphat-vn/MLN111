@@ -28,8 +28,8 @@ export function ClassDefinitionSection() {
   ]
 
   return (
-    <section id="section-2" className="min-h-screen py-24 px-4 bg-bg-muted relative">
-      <div className="absolute top-0 right-0 text-[20rem] font-serif font-bold text-black opacity-[0.03] select-none leading-none -mt-16 -mr-16">
+    <section id="section-2" className="min-h-screen py-24 px-4 bg-bg-muted relative overflow-hidden">
+      <div className="absolute top-0 right-0 text-[10rem] sm:text-[20rem] font-serif font-bold text-black opacity-[0.03] select-none leading-none -mt-16 -mr-16 pointer-events-none">
         02
       </div>
 

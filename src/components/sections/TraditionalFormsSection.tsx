@@ -8,7 +8,7 @@ import { CheckCircle2 } from "lucide-react"
 export function TraditionalFormsSection() {
   return (
     <section id="section-5" className="min-h-screen py-24 px-4 relative overflow-hidden">
-      <div className="absolute top-0 right-0 text-[20rem] font-serif font-bold text-text-muted opacity-5 select-none leading-none -mt-16 -mr-16">
+      <div className="absolute top-0 right-0 text-[10rem] sm:text-[20rem] font-serif font-bold text-text-muted opacity-5 select-none leading-none -mt-16 -mr-16 pointer-events-none">
         05
       </div>
 
@@ -50,10 +50,10 @@ export function TraditionalFormsSection() {
           transition={{ duration: 0.6 }}
         >
           <Tabs defaultValue="kinhte" className="w-full">
-            <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 h-auto gap-2 p-1 mb-8">
-              <TabsTrigger value="kinhte" className="text-lg py-3">Đấu tranh Kinh tế</TabsTrigger>
-              <TabsTrigger value="chinhtri" className="text-lg py-3">Đấu tranh Chính trị</TabsTrigger>
-              <TabsTrigger value="tutuong" className="text-lg py-3">Đấu tranh Tư tưởng</TabsTrigger>
+            <TabsList className="flex overflow-x-auto md:grid md:grid-cols-3 w-full h-auto gap-2 p-1 mb-8 scrollbar-none whitespace-nowrap justify-start md:justify-center">
+              <TabsTrigger value="kinhte" className="text-sm md:text-lg py-3 shrink-0 flex-1 md:flex-none min-w-[140px] md:min-w-0">Đấu tranh Kinh tế</TabsTrigger>
+              <TabsTrigger value="chinhtri" className="text-sm md:text-lg py-3 shrink-0 flex-1 md:flex-none min-w-[140px] md:min-w-0">Đấu tranh Chính trị</TabsTrigger>
+              <TabsTrigger value="tutuong" className="text-sm md:text-lg py-3 shrink-0 flex-1 md:flex-none min-w-[140px] md:min-w-0">Đấu tranh Tư tưởng</TabsTrigger>
             </TabsList>
             
             <TabsContent value="kinhte">

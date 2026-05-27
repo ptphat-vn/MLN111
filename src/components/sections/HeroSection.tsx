@@ -23,7 +23,7 @@ export function HeroSection() {
           >
             Triết học Mác - Lênin
           </motion.p>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
             <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="block">TÀI XẾ CÔNG NGHỆ:</motion.span>
             <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="block">NGƯỜI LÀM CHỦ hay</motion.span>
             <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="relative inline-block mt-2">

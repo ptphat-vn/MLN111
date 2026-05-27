@@ -28,8 +28,8 @@ export function CollectiveOfflineSection() {
   ]
 
   return (
-    <section id="section-9" className="min-h-screen py-24 px-4 bg-bg-surface relative">
-      <div className="absolute top-0 right-0 text-[20rem] font-serif font-bold text-text-muted opacity-5 select-none leading-none -mt-16 -mr-16">
+    <section id="section-9" className="min-h-screen py-24 px-4 bg-bg-surface relative overflow-hidden">
+      <div className="absolute top-0 right-0 text-[10rem] sm:text-[20rem] font-serif font-bold text-text-muted opacity-5 select-none leading-none -mt-16 -mr-16 pointer-events-none">
         10
       </div>
 
@@ -47,6 +47,9 @@ export function CollectiveOfflineSection() {
 
         {/* 10.1 Opposing Forces Diagram */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-24 relative">
+          {/* Vertical line behind items on mobile */}
+          <div className="md:hidden absolute top-10 bottom-10 left-1/2 w-[2px] bg-gradient-to-b from-red-200 via-accent-red to-blue-200 z-0 -translate-x-1/2"></div>
+
           {/* Left Block */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
@@ -82,7 +85,7 @@ export function CollectiveOfflineSection() {
              viewport={{ once: true }}
              className="z-10 flex flex-col items-center my-4 md:my-0"
           >
-            <Badge className="bg-accent-red hover:bg-accent-red/90 text-white px-4 py-2 text-sm flex items-center gap-2 shadow-lg">
+            <Badge className="bg-accent-red hover:bg-accent-red/90 text-white px-4 py-2 text-sm flex items-center gap-2 shadow-lg relative z-10 border border-[#b8860b]/30">
               <ArrowLeftRight className="w-4 h-4" />
               Mâu Thuẫn Lợi Ích
             </Badge>

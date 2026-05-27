@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent } from "../ui/card"
-import { Factory, Smartphone, ArrowRight, Share2, Globe, Cpu, Users2 } from "lucide-react"
+import { Factory, Smartphone, ArrowRight, ArrowDown, Share2, Globe, Cpu, Users2 } from "lucide-react"
 
 export function ModernStruggleSection() {
   const characteristics = [
@@ -28,8 +28,8 @@ export function ModernStruggleSection() {
   ]
 
   return (
-    <section id="section-6" className="min-h-screen py-24 px-4 bg-[#f5f1eb] relative">
-      <div className="absolute top-0 right-0 text-[20rem] font-serif font-bold text-black opacity-[0.03] select-none leading-none -mt-16 -mr-16">
+    <section id="section-6" className="min-h-screen py-24 px-4 bg-[#f5f1eb] relative overflow-hidden">
+      <div className="absolute top-0 right-0 text-[10rem] sm:text-[20rem] font-serif font-bold text-black opacity-[0.03] select-none leading-none -mt-16 -mr-16 pointer-events-none">
         06
       </div>
 
@@ -49,18 +49,24 @@ export function ModernStruggleSection() {
         </motion.div>
 
         <div className="mb-16">
-          <Card className="bg-bg-surface overflow-hidden border-none shadow-lg">
-            <CardContent className="p-0 flex flex-col md:flex-row">
-              <div className="w-full md:w-1/2 p-8 md:p-12 bg-gray-100 flex flex-col items-center justify-center text-center border-r border-gray-200">
+          <Card className="bg-bg-surface overflow-hidden border-none shadow-lg relative">
+            <CardContent className="p-0 flex flex-col md:flex-row relative">
+              <div className="w-full md:w-1/2 p-8 md:p-12 bg-gray-100 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-gray-200">
                 <Factory className="w-16 h-16 text-gray-400 mb-6" />
                 <h3 className="font-serif text-2xl font-bold mb-2 text-gray-700">Công nhân truyền thống</h3>
                 <p className="text-gray-500">Tập trung tại xí nghiệp, bị giám sát bởi đốc công, đấu tranh qua công đoàn cơ sở.</p>
               </div>
               
+              {/* Horizontal arrow for desktop */}
               <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full items-center justify-center shadow-md z-10 border border-gray-100">
                 <ArrowRight className="text-accent-red w-6 h-6" />
               </div>
 
+              {/* Vertical arrow for mobile */}
+              <div className="flex md:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full items-center justify-center shadow-md z-10 border border-gray-100">
+                <ArrowDown className="text-accent-red w-5 h-5" />
+              </div>
+ 
               <div className="w-full md:w-1/2 p-8 md:p-12 bg-[#fff5f5] flex flex-col items-center justify-center text-center relative overflow-hidden">
                 <div className="absolute inset-0 opacity-20 bg-[url('/modern_struggle.png')] bg-cover bg-center"></div>
                 <Smartphone className="w-16 h-16 text-accent-red mb-6 relative z-10" />

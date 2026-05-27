@@ -37,7 +37,7 @@ export function TraditionalFormsSection() {
           >
             <img 
               src="/driver_strike.png" 
-              alt="Đấu tranh của tài xế" 
+              alt="Phong trào đấu tranh của công nhân" 
               className="w-full max-w-sm rounded-xl shadow-lg border border-border object-cover"
             />
           </motion.div>
@@ -80,10 +80,10 @@ export function TraditionalFormsSection() {
 
                   <div className="bg-[#fffbf0] p-6 rounded-lg border border-accent-gold/20">
                     <h4 className="font-bold text-accent-gold mb-2 flex items-center gap-2">
-                      <span className="text-xl">💡</span> Áp dụng:
+                      <span className="text-xl">💡</span> Áp dụng thực tiễn:
                     </h4>
-                    <p className="text-text-ink text-sm">
-                      Tài xế công nghệ tắt app đồng loạt, tụ tập tại trụ sở công ty để phản đối tăng mức chiết khấu. (VD: Vụ đình công của tài xế GrabBike 2020, Be 2022).
+                    <p className="text-text-ink text-sm leading-relaxed">
+                      Phong trào bãi công của công nhân dệt tại các nhà máy lớn để phản đối việc cắt giảm thu nhập, đòi tăng 15% lương cơ bản, giảm giờ làm từ 12 tiếng xuống 8 tiếng/ngày và cải thiện điều kiện bảo hộ lao động nguy hiểm.
                     </p>
                   </div>
                 </CardContent>
@@ -114,10 +114,10 @@ export function TraditionalFormsSection() {
 
                   <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
                     <h4 className="font-bold text-blue-700 mb-2 flex items-center gap-2">
-                      <span className="text-xl">💡</span> Áp dụng:
+                      <span className="text-xl">💡</span> Áp dụng thực tiễn:
                     </h4>
-                    <p className="text-text-ink text-sm">
-                      Đấu tranh đòi nhà nước đưa "tài xế công nghệ" vào Luật Lao Động, công nhận pháp lý họ là "Người lao động" để hưởng BHXH, BHYT. (VD: Các phán quyết tòa án tại Anh, Tây Ban Nha buộc Uber coi tài xế là nhân viên).
+                    <p className="text-text-ink text-sm leading-relaxed">
+                      Phong trào đấu tranh Hiến chương (Chartism) của giai cấp công nhân đòi quyền bầu cử phổ thông, hoặc các phong trào biểu tình đòi Nhà nước luật hóa quyền tự do lập nghiệp đoàn, công nhận các đạo luật lao động tiến bộ của quốc gia.
                     </p>
                   </div>
                 </CardContent>
@@ -148,10 +148,10 @@ export function TraditionalFormsSection() {
 
                   <div className="bg-green-50 p-6 rounded-lg border border-green-200">
                     <h4 className="font-bold text-green-700 mb-2 flex items-center gap-2">
-                      <span className="text-xl">💡</span> Áp dụng:
+                      <span className="text-xl">💡</span> Áp dụng thực tiễn:
                     </h4>
-                    <p className="text-text-ink text-sm">
-                      Phá bỏ ảo tưởng "Đối tác độc lập", "Làm chủ thời gian". Giúp tài xế nhận thức rõ bản chất bóc lột của nền tảng, đoàn kết lại thành các nhóm/nghiệp đoàn trên mạng xã hội (Hội tài xế Grab, Be...).
+                    <p className="text-text-ink text-sm leading-relaxed">
+                      Tổ chức các câu lạc bộ đọc sách lý luận cách mạng, xuất bản và phân phát các tờ báo vô sản (như tờ Tia lửa - Iskra) để tuyên truyền học thuyết Mác, giúp công nhân nhận rõ bản chất bóc lột giá trị thặng dư và chuyển từ đấu tranh tự phát sang tự giác.
                     </p>
                   </div>
                 </CardContent>

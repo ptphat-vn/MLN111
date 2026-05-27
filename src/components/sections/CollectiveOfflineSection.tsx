@@ -147,6 +147,60 @@ export function CollectiveOfflineSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Why it is a modern class struggle - Detailed explanation Q&A */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-12"
+        >
+          <Card className="bg-[#FAF6EE] border-2 border-[#b8860b]/30 shadow-md">
+            <CardContent className="p-6 sm:p-8">
+              <h3 className="font-serif font-bold text-xl sm:text-2xl text-accent-red mb-6 text-center">
+                Vì sao “tắt app tập thể” là hình thức đấu tranh giai cấp hiện đại?
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="w-6 h-6 rounded-full bg-accent-red/10 text-accent-red flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">1</div>
+                    <p className="text-sm text-text-ink leading-relaxed">
+                      <strong>Người lao động cùng hành động tập thể:</strong> Không còn là sự đơn lẻ phản kháng, người lao động đồng loạt offline để tạo ra sức mạnh đàm phán thống nhất.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-6 h-6 rounded-full bg-accent-red/10 text-accent-red flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">2</div>
+                    <p className="text-sm text-text-ink leading-relaxed">
+                      <strong>Gây áp lực kinh tế trực tiếp lên doanh nghiệp:</strong> Việc dừng cung cấp dịch vụ đột ngột làm đứt gãy dịch vụ, trực tiếp cắt giảm doanh thu và gây áp lực tài chính.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-6 h-6 rounded-full bg-accent-red/10 text-accent-red flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">3</div>
+                    <p className="text-sm text-text-ink leading-relaxed">
+                      <strong>Không diễn ra ở nhà máy mà chuyển sang môi trường số</strong> 
+                      Cuộc đình công chuyển dịch sang không gian mạng, sử dụng chính ứng dụng công nghệ để phản kháng.
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="w-6 h-6 rounded-full bg-accent-red/10 text-accent-red flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">4</div>
+                    <p className="text-sm text-text-ink leading-relaxed">
+                      <strong>Phụ thuộc vào thuật toán và chiết khấu:</strong> Đấu tranh trực tiếp phản ánh sự bất mãn trước sự thống trị vô hình của hệ thống giám sát tự động, chính sách thưởng/phạt và mức chiết khấu đơn phương.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-6 h-6 rounded-full bg-accent-red/10 text-accent-red flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">5</div>
+                    <p className="text-sm text-text-ink leading-relaxed">
+                      <strong>Vạch trần bản chất "đối tác tự do":</strong> Cho thấy dù được khoác chiếc áo đối tác độc lập, người lao động thực chất vẫn chịu sự kiểm soát, chi phối và bóc lột vô cùng chặt chẽ từ giới chủ doanh nghiệp.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
     </section>
   )

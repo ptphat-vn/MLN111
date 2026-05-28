@@ -91,12 +91,12 @@ export function Navbar() {
                     aria-label={`Go to ${sec.name}`}
                   />
                   {/* Tooltip */}
-                  <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 z-50">
+                  <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 transform -translate-y-1 group-hover:translate-y-0 z-50">
                     <div className="bg-text-ink text-[#FAF6EE] text-xs font-serif font-semibold py-1.5 px-3 rounded shadow-lg whitespace-nowrap border border-border/10">
                       {sec.name}
                     </div>
                     {/* Arrow */}
-                    <div className="w-1.5 h-1.5 bg-text-ink border-b border-r border-border/10 rotate-45 absolute -bottom-[4px] left-1/2 -translate-x-1/2 z-40" />
+                    <div className="w-1.5 h-1.5 bg-text-ink border-t border-l border-border/10 rotate-45 absolute -top-[4px] left-1/2 -translate-x-1/2 z-40" />
                   </div>
                 </div>
               ))}

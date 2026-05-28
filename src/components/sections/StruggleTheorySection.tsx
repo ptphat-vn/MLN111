@@ -27,6 +27,43 @@ export function StruggleTheorySection() {
           </p>
         </motion.div>
 
+        {/* General Marxist Definition Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-16"
+        >
+          <Card className="bg-[#FAF6EE] border-l-4 border-accent-red shadow-md">
+            <CardContent className="p-6 space-y-4">
+              <h3 className="text-lg font-serif font-bold text-accent-red flex items-center gap-2">
+                <span>📖 Quan Điểm Chủ Nghĩa Mác – Lênin</span>
+              </h3>
+              <p className="text-text-ink text-base font-serif font-semibold leading-relaxed">
+                Đấu tranh giai cấp là cuộc đấu tranh giữa các giai cấp có lợi ích đối lập nhau.
+              </p>
+              <div className="border-t border-[#e0d9d0] pt-3.5">
+                <p className="text-text-muted text-xs font-semibold uppercase tracking-wider mb-3">Sự đối lập này xuất hiện vì:</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-serif text-text-ink font-semibold">
+                  <div className="bg-white/70 p-3.5 rounded-xl border border-[#e0d9d0] flex flex-col gap-2 shadow-sm">
+                    <span className="text-accent-gold text-xl">⚙️</span>
+                    <span className="leading-relaxed">Mỗi giai cấp có vị trí khác nhau trong hệ thống sản xuất.</span>
+                  </div>
+                  <div className="bg-white/70 p-3.5 rounded-xl border border-[#e0d9d0] flex flex-col gap-2 shadow-sm">
+                    <span className="text-accent-gold text-xl">💰</span>
+                    <span className="leading-relaxed">Có quyền lợi kinh tế khác nhau.</span>
+                  </div>
+                  <div className="bg-white/70 p-3.5 rounded-xl border border-[#e0d9d0] flex flex-col gap-2 shadow-sm">
+                    <span className="text-accent-gold text-xl">🎯</span>
+                    <span className="leading-relaxed">Có mục tiêu khác nhau.</span>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
         {/* Conflict Diagram */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-16 relative">
           {/* Vertical line behind items on mobile */}
@@ -40,12 +77,12 @@ export function StruggleTheorySection() {
           >
             <Card className="bg-white border-2 border-red-100 shadow-md">
               <CardContent className="p-6 text-center">
-                <Badge variant="outline" className="mb-4 bg-red-50 text-red-700 border-red-200">Chủ Nền Tảng</Badge>
-                <h3 className="font-serif font-bold text-xl mb-2">Tối đa hóa lợi nhuận</h3>
-                <ul className="text-sm text-text-muted text-left list-disc list-inside space-y-1">
-                  <li>Tăng chiết khấu</li>
-                  <li>Giảm thưởng</li>
-                  <li>Khóa app không cần lý do</li>
+                <Badge variant="outline" className="mb-4 bg-red-50 text-red-700 border-red-200">Chủ Doanh Nghiệp</Badge>
+                <h3 className="font-serif font-bold text-xl mb-3 text-red-950">Mục tiêu của giới chủ</h3>
+                <ul className="text-sm text-text-muted text-left list-disc list-inside space-y-2 font-serif font-medium">
+                  <li>Muốn tăng lợi nhuận</li>
+                  <li>Giảm chi phí lao động</li>
+                  <li>Tăng hiệu suất làm việc</li>
                 </ul>
               </CardContent>
             </Card>
@@ -77,11 +114,11 @@ export function StruggleTheorySection() {
             <Card className="bg-white border-2 border-blue-100 shadow-md">
               <CardContent className="p-6 text-center">
                 <Badge variant="outline" className="mb-4 bg-blue-50 text-blue-700 border-blue-200">Người Lao Động</Badge>
-                <h3 className="font-serif font-bold text-xl mb-2">Bảo vệ quyền lợi sống</h3>
-                <ul className="text-sm text-text-muted text-left list-disc list-inside space-y-1">
-                  <li>Tăng giá cước</li>
-                  <li>Giữ nguyên mức thưởng</li>
-                  <li>Quyền lợi bảo hiểm</li>
+                <h3 className="font-serif font-bold text-xl mb-3 text-blue-950">Mục tiêu của người lao động</h3>
+                <ul className="text-sm text-text-muted text-left list-disc list-inside space-y-2 font-serif font-medium">
+                  <li>Muốn tăng thu nhập</li>
+                  <li>Giảm áp lực công việc</li>
+                  <li>Có quyền lợi và điều kiện tốt hơn</li>
                 </ul>
               </CardContent>
             </Card>
@@ -104,19 +141,23 @@ export function StruggleTheorySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <Card className="bg-bg-surface">
+          <Card className="bg-bg-surface border border-border shadow-sm rounded-xl">
             <CardContent className="p-6">
               <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                  <AccordionTrigger className="text-lg font-serif">Nguyên nhân sâu xa</AccordionTrigger>
-                  <AccordionContent className="text-text-muted text-base leading-relaxed">
-                    Sự mâu thuẫn giữa tính chất xã hội hóa ngày càng cao của lực lượng sản xuất (mạng lưới hàng vạn tài xế phục vụ nhu cầu xã hội) với chế độ chiếm hữu tư nhân tư bản chủ nghĩa về tư liệu sản xuất (thuật toán và dữ liệu thuộc về số ít các tập đoàn công nghệ).
+                <AccordionItem value="item-1" className="border-b border-border/60">
+                  <AccordionTrigger className="text-lg font-serif font-bold text-accent-red hover:text-red-800">
+                    Nguyên nhân sâu xa (Kinh tế)
+                  </AccordionTrigger>
+                  <AccordionContent className="text-text-ink text-sm sm:text-base leading-relaxed font-serif font-medium pt-2 pl-2">
+                    Mâu thuẫn cơ bản giữa **lực lượng sản xuất** ngày càng có tính chất xã hội hóa cao với **quan hệ sản xuất** dựa trên chế độ chiếm hữu tư nhân tư bản chủ nghĩa về tư liệu sản xuất chủ yếu. Khi quan hệ sản xuất lỗi thời kìm hãm lực lượng sản xuất phát triển, mâu thuẫn này sẽ bùng nổ thành đấu tranh giai cấp sâu sắc.
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-2">
-                  <AccordionTrigger className="text-lg font-serif">Nguyên nhân trực tiếp</AccordionTrigger>
-                  <AccordionContent className="text-text-muted text-base leading-relaxed">
-                    Sự bóc lột giá trị thặng dư dưới hình thức tinh vi hơn: "chiết khấu". Thay vì trả lương và thu lợi nhuận trực tiếp, nền tảng để tài xế tự khai thác phương tiện của mình, tự chịu hao mòn, nhưng vẫn thu về 20-30% doanh thu mỗi cuốc xe.
+                <AccordionItem value="item-2" className="border-none">
+                  <AccordionTrigger className="text-lg font-serif font-bold text-accent-red hover:text-red-800">
+                    Nguyên nhân trực tiếp (Xã hội)
+                  </AccordionTrigger>
+                  <AccordionContent className="text-text-ink text-sm sm:text-base leading-relaxed font-serif font-medium pt-2 pl-2">
+                    Sự đối kháng gay gắt không thể điều hòa được về mặt **lợi ích kinh tế** (như việc giai cấp thống trị bóc lột giá trị thặng dư, chiếm đoạt kết quả lao động thặng dư của giai cấp bị trị). Khi mâu thuẫn lợi ích tích tụ đến đỉnh điểm, nó chuyển hóa trực tiếp thành đấu tranh chính trị - xã hội quyết liệt nhằm giành lại quyền lợi của giai cấp lao động.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

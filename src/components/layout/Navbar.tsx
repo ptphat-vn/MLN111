@@ -11,10 +11,12 @@ const SECTIONS = [
   { index: 5, name: "05. Đấu tranh Truyền thống", id: "section-5" },
   { index: 6, name: "06. Đấu tranh Hiện đại", id: "section-6" },
   { index: 7, name: "07. Game Nhập vai", id: "section-7" },
-  { index: 8, name: "08. Phân tích Bản chất", id: "section-8" },
-  { index: 9, name: "09. Tắt App tập thể", id: "section-9" },
-  { index: 10, name: "10. So sánh Lịch sử", id: "section-10" },
-  { index: 11, name: "11. Kết luận", id: "section-11" }
+  { index: 8, name: "08. Game Ô chữ", id: "section-8" },
+  { index: 9, name: "09. Phân tích Bản chất", id: "section-9" },
+  { index: 10, name: "10. Tắt App tập thể", id: "section-10" },
+  { index: 11, name: "11. So sánh Lịch sử", id: "section-11" },
+  { index: 12, name: "12. Kết luận", id: "section-12" },
+  { index: 13, name: "13. Game Xúc xắc", id: "section-13" }
 ]
 
 export function Navbar() {
@@ -24,7 +26,7 @@ export function Navbar() {
     damping: 30,
     restDelta: 0.001
   })
-  
+
   const [activeSection, setActiveSection] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
@@ -77,7 +79,7 @@ export function Navbar() {
             <Hammer className="text-accent-red h-6 w-6" />
             <span className="font-serif font-bold text-lg">Tài Xế Công Nghệ</span>
           </div>
-          
+
           {/* Desktop Navigation Dots */}
           {!isMobile && (
             <div className="flex items-center gap-2">
@@ -85,9 +87,8 @@ export function Navbar() {
                 <div key={sec.index} className="relative group">
                   <button
                     onClick={() => scrollTo(sec.id)}
-                    className={`w-7 h-2.5 rounded-full transition-colors cursor-pointer ${
-                      activeSection === sec.index ? "bg-accent-red" : "bg-bg-muted hover:bg-border"
-                    }`}
+                    className={`w-7 h-2.5 rounded-full transition-colors cursor-pointer ${activeSection === sec.index ? "bg-accent-red" : "bg-bg-muted hover:bg-border"
+                      }`}
                     aria-label={`Go to ${sec.name}`}
                   />
                   {/* Tooltip */}
@@ -114,9 +115,9 @@ export function Navbar() {
             </button>
           )}
         </div>
-        <motion.div 
-          className="h-1 bg-accent-gold origin-left" 
-          style={{ scaleX }} 
+        <motion.div
+          className="h-1 bg-accent-gold origin-left"
+          style={{ scaleX }}
         />
       </nav>
 
@@ -161,11 +162,10 @@ export function Navbar() {
                       scrollTo(sec.id)
                       setIsOpen(false)
                     }}
-                    className={`w-full text-left px-4 py-3 rounded-xl text-sm transition-colors cursor-pointer flex items-center justify-between ${
-                      activeSection === sec.index
+                    className={`w-full text-left px-4 py-3 rounded-xl text-sm transition-colors cursor-pointer flex items-center justify-between ${activeSection === sec.index
                         ? "bg-accent-red/10 text-accent-red font-bold"
                         : "text-text-ink hover:bg-bg-muted font-medium"
-                    }`}
+                      }`}
                   >
                     <span className="font-serif">{sec.name}</span>
                     {activeSection === sec.index && (

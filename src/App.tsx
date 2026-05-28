@@ -12,6 +12,7 @@ import { GameSection } from "./components/sections/GameSection"
 import { AnalysisPlaceholderSection } from "./components/sections/AnalysisPlaceholderSection"
 import { CollectiveOfflineSection } from "./components/sections/CollectiveOfflineSection"
 import { HistoricalComparisonSection } from "./components/sections/HistoricalComparisonSection"
+import { DiceGameSection } from "./components/sections/DiceGameSection"
 import { ConclusionSection } from "./components/sections/ConclusionSection"
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <CollectiveOfflineSection />
         <HistoricalComparisonSection />
         <ConclusionSection />
+        <DiceGameSection />
       </main>
       <Footer />
     </div>

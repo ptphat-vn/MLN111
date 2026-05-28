@@ -67,7 +67,7 @@ export function HistoricalComparisonSection() {
         {/* Visual Timeline Split */}
         <div className="grid md:grid-cols-2 rounded-2xl overflow-hidden mb-16 shadow-lg border border-border">
           {/* 19th Century */}
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.02 }} transition={{ type: "spring", stiffness: 300 }}
             className="bg-[#f5efe0] p-8 md:p-12 flex flex-col items-center border-b md:border-b-0 md:border-r border-border"
           >
@@ -95,7 +95,7 @@ export function HistoricalComparisonSection() {
             <p className="text-center text-text-muted font-medium">Bãi công, đình công, đập phá máy móc cơ khí.</p>
           </motion.div>
           {/* Present */}
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.02 }} transition={{ type: "spring", stiffness: 300 }}
             className="bg-[#f8faff] p-8 md:p-12 flex flex-col items-center"
           >
@@ -160,7 +160,7 @@ export function HistoricalComparisonSection() {
               <div className="flex-1 p-8 md:p-12">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
                   </div>
                   <h3 className="font-serif text-2xl font-bold">Ngày Trước</h3>
                 </div>
@@ -169,13 +169,13 @@ export function HistoricalComparisonSection() {
                   <li className="flex gap-3"><span className="text-accent-red font-bold">Hành động:</span> Đình công, biểu tình nhà máy, đập phá máy móc</li>
                 </ul>
               </div>
-              
+
               <div className="w-full h-px md:w-px md:h-auto bg-accent-red shrink-0"></div>
 
               <div className="flex-1 p-8 md:p-12 bg-[#fffbf5]">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent-red"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent-red"><rect x="5" y="2" width="14" height="20" rx="2" ry="2" /><line x1="12" y1="18" x2="12.01" y2="18" /></svg>
                   </div>
                   <h3 className="font-serif text-2xl font-bold text-accent-red">Ngày Nay</h3>
                 </div>
@@ -191,7 +191,7 @@ export function HistoricalComparisonSection() {
 
       {/* Section Conclusion Badge */}
       <div className="w-full bg-accent-red text-white py-12 px-4 relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}

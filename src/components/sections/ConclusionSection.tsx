@@ -23,7 +23,7 @@ export function ConclusionSection() {
   }
 
   return (
-    <section id="section-11" className="min-h-screen py-24 px-4 bg-bg-muted relative flex items-center justify-center overflow-hidden">
+    <section id="section-12" className="min-h-screen py-24 px-4 bg-bg-muted relative flex items-center justify-center overflow-hidden">
       <div className="absolute top-0 right-0 text-[10rem] sm:text-[20rem] font-serif font-bold text-black opacity-[0.03] select-none leading-none -mt-16 -mr-16 pointer-events-none">
         12
       </div>
@@ -40,7 +40,7 @@ export function ConclusionSection() {
           <div className="w-24 h-1 bg-accent-red mx-auto mb-8"></div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 pt-8"
           variants={containerVariants}
           initial="hidden"

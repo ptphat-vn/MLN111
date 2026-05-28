@@ -80,10 +80,10 @@ export function CollectiveOfflineSection() {
 
           {/* Center Badge */}
           <motion.div
-             initial={{ scale: 0 }}
-             whileInView={{ scale: 1 }}
-             viewport={{ once: true }}
-             className="z-10 flex flex-col items-center my-4 md:my-0"
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            className="z-10 flex flex-col items-center my-4 md:my-0"
           >
             <Badge className="bg-accent-red hover:bg-accent-red/90 text-white px-4 py-2 text-sm flex items-center gap-2 shadow-lg relative z-10 border border-[#b8860b]/30">
               <ArrowLeftRight className="w-4 h-4" />
@@ -178,7 +178,7 @@ export function CollectiveOfflineSection() {
                   <div className="flex gap-3">
                     <div className="w-6 h-6 rounded-full bg-accent-red/10 text-accent-red flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">3</div>
                     <p className="text-sm text-text-ink leading-relaxed">
-                      <strong>Không diễn ra ở nhà máy mà chuyển sang môi trường số</strong> 
+                      <strong>Không diễn ra ở nhà máy mà chuyển sang môi trường số</strong>
                       Cuộc đình công chuyển dịch sang không gian mạng, sử dụng chính ứng dụng công nghệ để phản kháng.
                     </p>
                   </div>

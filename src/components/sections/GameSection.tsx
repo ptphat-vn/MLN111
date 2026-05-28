@@ -661,7 +661,7 @@ export function GameSection() {
 
               {/* RPG Character Sprites Layer */}
               {!scene.phoneMessages && (
-                <div className="absolute inset-x-0 bottom-0 top-16 flex items-end justify-between px-4 sm:px-12 pointer-events-none z-10 overflow-hidden">
+                <div className="absolute inset-x-0 bottom-0 top-16 pointer-events-none z-10 overflow-hidden">
                   {/* MINH (Left) */}
                   <motion.div
                     animate={{
@@ -671,7 +671,7 @@ export function GameSection() {
                       filter: activeSpeakerKey === "minh" || parsed.type === "action" || parsed.type === "narrative" ? "brightness(1.05) contrast(1.05)" : "brightness(0.55)"
                     }}
                     transition={{ type: "spring", stiffness: 120, damping: 20 }}
-                    className="relative w-[32%] h-[100%] flex items-end justify-center origin-bottom shrink-0"
+                    className="absolute bottom-0 left-[2%] sm:left-[6%] w-[32%] h-full flex items-end justify-center origin-bottom shrink-0"
                   >
                     <img
                        src="/characters/minh.png"
@@ -689,7 +689,7 @@ export function GameSection() {
                       filter: activeSpeakerKey === "company" || parsed.type === "action" || parsed.type === "narrative" ? "brightness(1.05) contrast(1.05)" : "brightness(0.55)"
                     }}
                     transition={{ type: "spring", stiffness: 120, damping: 20 }}
-                    className="relative w-[32%] h-[100%] flex items-end justify-center origin-bottom shrink-0"
+                    className="absolute bottom-0 left-[20%] sm:left-[25%] w-[32%] h-full flex items-end justify-center origin-bottom shrink-0"
                   >
                     <img
                       src="/characters/ceo.png"
@@ -708,7 +708,7 @@ export function GameSection() {
                       filter: activeSpeakerKey === "ai" ? "brightness(1.1)" : "brightness(0.55)"
                     }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                    className="relative w-[32%] h-[100%] flex items-end justify-center origin-bottom shrink-0"
+                    className="absolute bottom-0 right-[20%] sm:right-[25%] w-[32%] h-full flex items-end justify-center origin-bottom shrink-0"
                   >
                     <img
                       src="/characters/ai.png"
@@ -726,7 +726,7 @@ export function GameSection() {
                       filter: activeSpeakerKey === "huy" || parsed.type === "action" || parsed.type === "narrative" ? "brightness(1.05) contrast(1.05)" : "brightness(0.55)"
                     }}
                     transition={{ type: "spring", stiffness: 120, damping: 20 }}
-                    className="relative w-[32%] h-[100%] flex items-end justify-center origin-bottom shrink-0"
+                    className="absolute bottom-0 right-[2%] sm:right-[6%] w-[32%] h-full flex items-end justify-center origin-bottom shrink-0"
                   >
                     <img
                       src="/characters/huy.png"
